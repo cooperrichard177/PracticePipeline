@@ -7,7 +7,8 @@ jobs:
   build:
     docker:
     # specify the version you desire here
-    - image: circleci/openjdk:8-jdk
+      - image: circleci/openjdk:8-jdk-node-browsers
+
 
     # Specify service dependencies here if necessary
     # CircleCI maintains a library of pre-built images
@@ -38,5 +39,5 @@ jobs:
         key: v1-dependencies-{{ checksum "pom.xml" }}
 
     # run tests!
-    - run: mvn integration-test
+    - run: mvn test
 
